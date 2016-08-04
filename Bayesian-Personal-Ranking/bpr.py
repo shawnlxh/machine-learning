@@ -47,7 +47,7 @@ def predict(user_matrix, item_matrix):
 	predict_matrix = np.zeros(1586126)
 	for i in range(943):
 		for j in range(1682):
-			predict_matrix[i*943+j] = np.dot(user_matrix[i],item_matrix[j].T)
+			predict_matrix[i*1682+j] = np.dot(user_matrix[i],item_matrix[j].T)
 	return predict_matrix
 
 for i in range(200):
@@ -59,9 +59,9 @@ test = np.zeros(1586126)
 for i in range(943):
     for j in range(1682):
         if test_data[i][j] > 3:
-            test[i*943+j] = 1
+            test[i*1682+j] = 1
         else:
-            test[i*943+j] = 0
+            test[i*1682+j] = 0
             
 for i in range(1586126):
     test[i] = int(test[i])
